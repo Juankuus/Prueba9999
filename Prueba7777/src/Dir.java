@@ -1,4 +1,5 @@
 import java.io.File;
+import java.text.SimpleDateFormat;
 
 public class Dir {
 	private String directorio;
@@ -60,4 +61,34 @@ public class Dir {
 		}
 		return generarEspacios(mayorEspacios);
 	}
+	
+	
+	public void mostrar() {
+		int numArchivos = 0;
+		int numDirs = 0;
+		long totalBytesArchvivos = 0;
+		long totalBytesDirs = 0;
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		System.out.println("\t== Directorio de "+carpeta.getAbsolutePath()+" ==");
+		for (int i = 0; i < archivos.length; i++) {
+			if (archivos[i].isDirectory()) {
+				System.out.println(simpleDateFormat.format(archivos[i].lastModified()) + "\t<DIR>\t"+comprobarNumeroEspacios()+" "
+						+ archivos[i].getName());
+				numDirs++;
+				totalBytesDirs += archivos[i].length();
+			}else {
+				int espacios = comprobarNumeroEspacios().length() - (Long.toString(archivos[i].length())).length();
+				System.out.println(simpleDateFormat.format(archivos[i].lastModified()) + "\t     \t"+archivos[i].length()+generarEspacios(espacios)+" "
+						+ archivos[i].getName());
+				numArchivos++;
+				totalBytesArchvivos += archivos[i].length();
+			}
+		}
+		System.out.println("\t"+numArchivos+" archivos\t"+totalBytesArchvivos+" bytes");
+		System.out.println("\t"+numDirs+" dirs \t"+totalBytesDirs+" bytes");
+		for (int i = 0; i<5; i++) {
+			System.out.println("");
+		}
+	}
+	
 }
