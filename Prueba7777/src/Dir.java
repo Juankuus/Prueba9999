@@ -50,6 +50,7 @@ public class Dir {
 	}
 
 	public String comprobarNumeroEspacios() {
+		
 		int mayorEspacios = 0;
 
 		for (int i = 0; i < archivos.length; i++) {
