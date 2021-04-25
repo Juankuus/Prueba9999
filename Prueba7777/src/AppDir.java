@@ -13,6 +13,7 @@ public class AppDir {
 				Dir dirRutaValida = new Dir("C:/Users/tarde/Desktop");
 				dirRutaValida.generarArchivos();
 				dirRutaValida.mostrar();
+				
 	}
 
 }
