@@ -1,4 +1,4 @@
-import ejercicio1.Dir;
+
 
 public class AppDir {
 
@@ -13,6 +13,19 @@ public class AppDir {
 		Dir dirRutaValida = new Dir("C:/Users/tarde/Desktop");
 		dirRutaValida.generarArchivos();
 		dirRutaValida.mostrar();
+		
+		//dir con ruta no valida:
+		Dir dirRutaNoValida = new Dir("C:/Users/rde/Desktop");
+		dirRutaNoValida.generarArchivos();
+		dirRutaNoValida.mostrar();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce la ruta");
+		Dir dirRutaPedida = new Dir(sc.nextLine());
+		dirRutaPedida.generarArchivos();
+		dirRutaPedida.mostrar();
+
+		sc.close();
 				
 	}
 
