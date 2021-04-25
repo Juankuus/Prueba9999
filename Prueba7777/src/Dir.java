@@ -40,4 +40,12 @@ public class Dir {
 			archivos[i] = temp;
 		}
 	}
+	
+	public String generarEspacios(int mayorEspacios) {
+		String espacios = "";
+		for (int i = 0; i < mayorEspacios; i++) {
+			espacios = espacios + " ";
+		}
+		return espacios;
+	}
 }
