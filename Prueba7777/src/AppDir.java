@@ -1,9 +1,18 @@
+import ejercicio1.Dir;
 
 public class AppDir {
 
 	public static void main(String[] args) {
-		// TODO Esbozo de método generado automáticamente
-
+		// TODO Esbozo de mï¿½todo generado automï¿½ticamente
+		//dir sin especificar ruta: en la carpeta del proyecto:
+				Dir dirSinRuta = new Dir();
+				dirSinRuta.generarArchivos();
+				dirSinRuta.mostrar();
+				
+				//dir especificando una ruta valida:
+				Dir dirRutaValida = new Dir("C:/Users/tarde/Desktop");
+				dirRutaValida.generarArchivos();
+				dirRutaValida.mostrar();
 	}
 
 }
