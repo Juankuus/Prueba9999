@@ -32,20 +32,31 @@ public class Dir {
 		else
 			return false;
 	}
-	
+
 	public void generarArchivos() {
 		archivos = new File[carpeta.list().length];
 		for (int i = 0; i < archivos.length; i++) {
-			File temp = new File (carpeta, carpeta.list()[i]);  
+			File temp = new File(carpeta, carpeta.list()[i]);
 			archivos[i] = temp;
 		}
 	}
-	
+
 	public String generarEspacios(int mayorEspacios) {
 		String espacios = "";
 		for (int i = 0; i < mayorEspacios; i++) {
 			espacios = espacios + " ";
 		}
 		return espacios;
+	}
+
+	public String comprobarNumeroEspacios() {
+		int mayorEspacios = 0;
+
+		for (int i = 0; i < archivos.length; i++) {
+			if ((Long.toString(archivos[i].length())).length() > mayorEspacios) {
+				mayorEspacios = (Long.toString(archivos[i].length())).length();
+			}
+		}
+		return generarEspacios(mayorEspacios);
 	}
 }
