@@ -32,4 +32,12 @@ public class Dir {
 		else
 			return false;
 	}
+	
+	public void generarArchivos() {
+		archivos = new File[carpeta.list().length];
+		for (int i = 0; i < archivos.length; i++) {
+			File temp = new File (carpeta, carpeta.list()[i]);  
+			archivos[i] = temp;
+		}
+	}
 }
